@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+      <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
+      <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="obj\Debug\net9.0-windows\kyrs.csproj.Up2Date" />
+      <Content Include="obj\Debug\net9.0-windows\kyrs_1dy43vxi_wpftmp.assets.cache" />
+      <Content Include="obj\Debug\net9.0-windows\kyrs_3pq4zmaq_wpftmp.assets.cache" />
+      <Content Include="obj\Debug\net9.0-windows\kyrs_4j542b1c_wpftmp.assets.cache" />
+      <Content Include="obj\Debug\net9.0-windows\kyrs_ao10zzqu_wpftmp.assets.cache" />
+      <Content Include="obj\Debug\net9.0-windows\kyrs_aq1clris_wpftmp.assets.cache" />
+      <Content Include="obj\Debug\net9.0-windows\kyrs_bx1kggir_wpftmp.assets.cache" />
+      <Content Include="obj\Debug\net9.0-windows\kyrs_euoelb4e_wpftmp.assets.cache" />
+      <Content Include="obj\Debug\net9.0-windows\kyrs_hedqsjt2_wpftmp.assets.cache" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="ViewModels\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="Views\Authorization.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Views\Cashier.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="MainWindow.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+
+</Project>
