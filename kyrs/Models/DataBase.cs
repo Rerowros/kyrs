@@ -1,5 +1,6 @@
-﻿// File: Models/ApplicationContext.cs
+﻿
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace kyrs.Models
 {
@@ -15,16 +16,18 @@ namespace kyrs.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql("server=localhost;user=root;password=Rerowros;database=csharp;",
-                new MySqlServerVersion(new Version(8, 0, 39)));
+                new MySqlServerVersion(new Version(8, 0, 39)),
+                mySqlOptions => mySqlOptions
+                .EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null)
+                .CommandTimeout(30));
         }
+
         
         public async Task<User?> ValidateUserAsync(string login, string password)
         {
+
             return await Users.SingleOrDefaultAsync(u => u.Login == login && u.Password == password);
         }
-        
-        
-        
         
         
         /*Валидация с хешированием*/

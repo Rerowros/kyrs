@@ -45,3 +45,11 @@ C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\Microsoft.Extens
 C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\MySqlConnector.dll
 C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\BCrypt.Net-Next.dll
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\kyrs.sourcelink.json
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\Admin.g.cs
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\Manager.g.cs
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\kyrs_MarkupCompile.lref
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\Admin.baml
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\Manager.baml
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\logs.g.cs
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\logs.baml

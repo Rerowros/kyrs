@@ -11,7 +11,9 @@
     <Grid>
         <Frame Name="MainFrame" NavigationUIVisibility="Hidden" />
         <Label Content="Обменник валют" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Top" />
-        <Button Content="авторизация" Click="GoToPage1_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
+        <Button Content="авторизация" Click="GoToPage1_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"/>
         <Button Content="страница 2" Click="GoToPage2_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0"/>
+        <Button Content="admin" Click="GoToPage3_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,40,0,0"/>
+        <Button Content="manager" Click="GoToPage4_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,40,0,0"/>
     </Grid>
 </Window>

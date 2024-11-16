@@ -32,6 +32,14 @@ public partial class MainWindow : Window
     {
         MainFrame.Navigate(new Cashier());
     }
+    private void GoToPage3_Click(object sender, RoutedEventArgs e)
+    {
+        MainFrame.Navigate(new Admin());
+    }
     
+    private void GoToPage4_Click(object sender, RoutedEventArgs e)
+    {
+        MainFrame.Navigate(new Manager());
+    }
     
 }

@@ -13,6 +13,7 @@
         "packagesPath": "C:\\Users\\yp328\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\yp328\\RiderProjects\\kyrs\\kyrs\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\yp328\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
