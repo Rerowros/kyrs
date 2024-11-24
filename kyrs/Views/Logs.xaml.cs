@@ -2,9 +2,9 @@
 
 namespace kyrs.Views;
 
-public partial class logs : Page
+public partial class Logs : Page
 {
-    public logs()
+    public Logs()
     {
         InitializeComponent();
     }

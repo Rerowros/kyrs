@@ -7,8 +7,8 @@ public class User
 {
     public int Id { get; set; }
     [MaxLength(10)] public string? Login { get; set; }
-    [MaxLength(10)] public string? Password { get; set; }
-    [MaxLength(150)] private string? PasswordHash { get; set; }
+    [MaxLength(255)] public string? PasswordHash { get; set; }
+    [MaxLength(20)] public string? Role { get; set; }
 
     public void SetPassword(string password)
     {

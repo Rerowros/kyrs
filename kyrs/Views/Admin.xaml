@@ -29,6 +29,7 @@
                     <ComboBoxItem Content="Менеджер" />
                 </ComboBox>
                 <Button Content="Добавить" Width="200" Margin="5" Click="AddUserButton_Click" />
+                <Button Content="База пользователей" Width="200" Margin="5,40,5,5" Click="ToUserList" />
             </StackPanel>
         </Border>
         <Border VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20" CornerRadius="6" Background="#4d3675" BorderThickness="1" Height="100" Width="375">
@@ -43,7 +44,7 @@
             
             <StackPanel Orientation="Vertical" Margin="10">
                 <Label Content="Настройки системы" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" />
-                <Button Content="Конфигурация" Width="200" Margin="5" Click="ConfigurationButton_Click" />
+                <Button Content="Конфигурация" Width="200" Margin="5,7,5,5" Click="ConfigurationButton_Click" />
                 
                 <Button Content="Резервное копирование" Width="200" Margin="0,40,0,0" Click="BackupButton_Click" />
                 <ComboBox Foreground="White" x:Name="BackUp" Width="200" Margin="5">

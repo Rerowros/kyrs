@@ -23,11 +23,6 @@ namespace kyrs.Models
         }
 
         
-        public async Task<User?> ValidateUserAsync(string login, string password)
-        {
-
-            return await Users.SingleOrDefaultAsync(u => u.Login == login && u.Password == password);
-        }
         
         
         /*Валидация с хешированием*/

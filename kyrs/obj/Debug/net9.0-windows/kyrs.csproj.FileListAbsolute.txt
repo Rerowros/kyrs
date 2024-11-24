@@ -16,7 +16,6 @@ C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\kyrs.pdb
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\kyrs.genruntimeconfig.cache
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\ref\kyrs.dll
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Styles.baml
-C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\App.baml
 C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\MaterialDesignColors.dll
 C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\MaterialDesignThemes.Wpf.dll
 C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\Microsoft.Xaml.Behaviors.dll
@@ -53,3 +52,8 @@ C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\Admin.baml
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\Manager.baml
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\logs.g.cs
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\logs.baml
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\App.baml
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\UserList.g.cs
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\UserList.baml
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\EditUserWindow.baml
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\EditUserWindow.g.cs

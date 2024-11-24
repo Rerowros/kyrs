@@ -23,7 +23,6 @@ namespace kyrs
             if (textBox.Text == "Введите сумму")
             {
                 textBox.Text = "";
-                textBox.Foreground = new SolidColorBrush(Colors.White);
             }
         }
 
@@ -33,7 +32,6 @@ namespace kyrs
             if (string.IsNullOrWhiteSpace(textBox.Text))
             {
                 textBox.Text = "Введите сумму";
-                textBox.Foreground = new SolidColorBrush(Colors.White);
             }
         }
 

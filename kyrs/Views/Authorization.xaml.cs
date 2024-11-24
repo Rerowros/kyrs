@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 using kyrs.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace kyrs.Views
 {
@@ -20,8 +21,8 @@ namespace kyrs.Views
             string password = PasswordBox.Password;
 
             await using var context = new ApplicationContext();
-            var user = await context.ValidateUserAsync(login, password);
-            if (user != null)
+            var user = await context.Users.FirstOrDefaultAsync(u => u.Login == login);
+            if (user != null && user.ValidatePassword(password))
             {
                 MessageBox.Show("Успешный вход");
                 if (NavigationService != null) NavigationService.Navigate(new Cashier());
