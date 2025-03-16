@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using kyrs.Models;
@@ -11,7 +12,6 @@ public partial class Admin : Page
     public Admin()
     {
         InitializeComponent();
-        
     }
 
     private async void AddUserButton_Click(object sender, RoutedEventArgs e)
@@ -43,18 +43,21 @@ public partial class Admin : Page
     
     private void ViewLogsButton_Click(object sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        string logFilePath = "logfile.txt"; 
+        if (File.Exists(logFilePath))
+        {
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = logFilePath,
+                UseShellExecute = true
+            });
+        }
+        else
+        {
+            MessageBox.Show("Файл логов не найден.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
-
-    private void ConfigurationButton_Click(object sender, RoutedEventArgs e)
-    {
-        throw new NotImplementedException();
-    }
-
-    private void BackupButton_Click(object sender, RoutedEventArgs e)
-    {
-        throw new NotImplementedException();
-    }
+    
     
     private void TextBox_GotFocus(object sender, RoutedEventArgs e)
     {
@@ -86,6 +89,11 @@ public partial class Admin : Page
     private void ToUserList(object sender, RoutedEventArgs e)
     {
         NavigationService.Navigate(new UserList());
+    }
+
+    private void ViewTransactionsButton_Click(object sender, RoutedEventArgs e)
+    {
+        NavigationService.Navigate(new TransactionHistory());
     }
 }
 

@@ -50,10 +50,13 @@ C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\Manager.g.
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\kyrs_MarkupCompile.lref
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\Admin.baml
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\Manager.baml
-C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\logs.g.cs
-C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\logs.baml
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\App.baml
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\UserList.g.cs
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\UserList.baml
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\EditUserWindow.baml
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\EditUserWindow.g.cs
+C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\NLog.config
+C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\NLog.dll
+C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\RestSharp.dll
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\TransactionHistory.g.cs
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\TransactionHistory.baml

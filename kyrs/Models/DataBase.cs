@@ -1,5 +1,4 @@
-﻿
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 
 namespace kyrs.Models
@@ -7,7 +6,9 @@ namespace kyrs.Models
     public class ApplicationContext : DbContext
     {
         public DbSet<User> Users { get; set; } = null!;
-
+        public DbSet<Currency> currency { get; set; } = null!; // Добавьте это свойство
+        public DbSet<Transaction> Transactions { get; set; }
+        
         public ApplicationContext()
         {
             Database.EnsureCreated();

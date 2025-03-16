@@ -1,0 +1,63 @@
+﻿# Визуальная студия
+.vscode/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.idea/
+.github/
+.git/
+# Сборка
+bin/
+obj/
+*.dll
+*.exe
+*.app
+*.log
+*.pdb
+*.cache
+*.ilk
+*.idb
+*.lib
+*.ncb
+*.sbr
+*.scc
+*.sln
+*.suo
+*.tlb
+*.tlh
+*.tmp
+*.csproj.user
+*.csproj.vspscc
+*.vbproj.user
+*.vbproj.vspscc
+*.pfx
+*.publishsettings
+
+# Пакеты
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+ehthumbs.db
+$RECYCLE.BIN/
+
+# Логи и отчеты
+*.log
+*.tlog
+*.wrn
+*.err
+*.log
+*.vspscc
+*.vssscc
+*.vspx
+*.vsmdi
+*.testsettings
+*.vsdconfig

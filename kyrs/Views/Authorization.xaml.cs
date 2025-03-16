@@ -24,6 +24,9 @@ namespace kyrs.Views
             var user = await context.Users.FirstOrDefaultAsync(u => u.Login == login);
             if (user != null && user.ValidatePassword(password))
             {
+                // Сохраняем информацию о текущем пользователе
+                App.CurrentUser = user;
+        
                 MessageBox.Show("Успешный вход");
                 if (NavigationService != null) NavigationService.Navigate(new Cashier());
             }
@@ -32,7 +35,7 @@ namespace kyrs.Views
                 LabelError.Visibility = Visibility.Visible;
             }
         }
-
+        
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;

@@ -19,4 +19,5 @@ public class User
     {
         return BCrypt.Net.BCrypt.Verify(password, PasswordHash);
     }
+    
 }

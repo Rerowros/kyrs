@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using kyrs.Views;
+using NLog;
 
 namespace kyrs;
 
@@ -17,15 +18,18 @@ namespace kyrs;
 /// </summary>
 public partial class MainWindow : Window
 {
+    private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
     public MainWindow()
     {
         InitializeComponent();
         MainFrame.Navigate(new Authorization());
+        Logger.Info("Приложение запущено");
     }
     private void GoToPage1_Click(object sender, RoutedEventArgs e)
     {
         MainFrame.Navigate(new Authorization());
-        Console.WriteLine("2");
+        Logger.Info("Переход на страницу авторизации");
     }
 
     private void GoToPage2_Click(object sender, RoutedEventArgs e)

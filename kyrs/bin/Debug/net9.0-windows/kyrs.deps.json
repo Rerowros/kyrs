@@ -10,7 +10,11 @@
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
           "MaterialDesignThemes": "5.1.0",
-          "Pomelo.EntityFrameworkCore.MySql": "8.0.2"
+          "NLog": "5.3.4",
+          "NLog.Config": "4.7.15",
+          "NLog.Schema": "5.3.4",
+          "Pomelo.EntityFrameworkCore.MySql": "8.0.2",
+          "RestSharp": "112.1.0"
         },
         "runtime": {
           "kyrs.dll": {}
@@ -198,6 +202,21 @@
           }
         }
       },
+      "NLog/5.3.4": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.3.4.2778"
+          }
+        }
+      },
+      "NLog.Config/4.7.15": {
+        "dependencies": {
+          "NLog": "5.3.4",
+          "NLog.Schema": "5.3.4"
+        }
+      },
+      "NLog.Schema/5.3.4": {},
       "Pomelo.EntityFrameworkCore.MySql/8.0.2": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "8.0.2",
@@ -207,6 +226,14 @@
           "lib/net8.0/Pomelo.EntityFrameworkCore.MySql.dll": {
             "assemblyVersion": "8.0.2.0",
             "fileVersion": "8.0.2.0"
+          }
+        }
+      },
+      "RestSharp/112.1.0": {
+        "runtime": {
+          "lib/net8.0/RestSharp.dll": {
+            "assemblyVersion": "112.1.0.0",
+            "fileVersion": "112.1.0.0"
           }
         }
       }
@@ -344,12 +371,40 @@
       "path": "mysqlconnector/2.3.5",
       "hashPath": "mysqlconnector.2.3.5.nupkg.sha512"
     },
+    "NLog/5.3.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gLy7+O1hEYJXIlcTr1/VWjGXrZTQFZzYNO18IWasD64pNwz0BreV+nHLxWKXWZzERRzoKnsk2XYtwLkTVk7J1A==",
+      "path": "nlog/5.3.4",
+      "hashPath": "nlog.5.3.4.nupkg.sha512"
+    },
+    "NLog.Config/4.7.15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-njc2NvwgAzEuH609TGO4yqpokcxXFdypHwG3I8hyLYIE4pr+j4KJB4ZhsyODVwkP/n2F2V4uJ24VW4icNyJMcA==",
+      "path": "nlog.config/4.7.15",
+      "hashPath": "nlog.config.4.7.15.nupkg.sha512"
+    },
+    "NLog.Schema/5.3.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eMlf4Y0gx5KycV3cdptEocd9Y9h10fWhRVUKyuY9nF6a55eWJlpKHqCWQbgHjvbC/7cBfF8DsZG8dZbST2fpew==",
+      "path": "nlog.schema/5.3.4",
+      "hashPath": "nlog.schema.5.3.4.nupkg.sha512"
+    },
     "Pomelo.EntityFrameworkCore.MySql/8.0.2": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-XjnlcxVBLnEMbyEc5cZzgZeDyLvAniACZQ04W1slWN0f4rmfNzl98gEMvHnFH0fMDF06z9MmgGi/Sr7hJ+BVnw==",
       "path": "pomelo.entityframeworkcore.mysql/8.0.2",
       "hashPath": "pomelo.entityframeworkcore.mysql.8.0.2.nupkg.sha512"
+    },
+    "RestSharp/112.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bOUGNZqhhv/QeCXHTKEUil846yBjwWXpzPKjO67kFvaAOoF361z7jLY5BMnuZ6WD2WQRA750sNMcK7MSPCQ5Mg==",
+      "path": "restsharp/112.1.0",
+      "hashPath": "restsharp.112.1.0.nupkg.sha512"
     }
   }
 }

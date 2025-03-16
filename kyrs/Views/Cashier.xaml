@@ -31,7 +31,7 @@
                     <ComboBoxItem Content="EUR" />
                     <ComboBoxItem Content="RUB" />
                 </ComboBox>
-                
+                <Button Content="Обновить курсы" Width="200" Margin="5" Click="UpdateRatesButton_Click" />
                 <Button Content="Обменять" Width="200" Margin="5" Click="ExchangeButton_Click" />
             </StackPanel>
 

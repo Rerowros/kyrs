@@ -4,11 +4,13 @@ using kyrs.Models;
 
 namespace kyrs.Views
 {
-    public partial class EditUserWindow : Window
+    public partial class EditUserWindow 
     {
-        private User _user;
+        private readonly User _user;
 
-        public EditUserWindow(User user)
+
+        
+        public EditUserWindow(User user) 
         {
             InitializeComponent();
             _user = user;
