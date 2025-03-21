@@ -40,4 +40,8 @@ public partial class UserList : Page
             LoadUsers();
         }
     }
+    private void back(object sender, RoutedEventArgs e)
+    {
+        NavigationService.Navigate(new Admin());        
+    }
 }

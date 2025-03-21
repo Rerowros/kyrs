@@ -46,10 +46,8 @@ C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\Pomelo.EntityFra
 C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\BCrypt.Net-Next.dll
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\kyrs.sourcelink.json
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\Admin.g.cs
-C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\Manager.g.cs
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\kyrs_MarkupCompile.lref
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\Admin.baml
-C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\Manager.baml
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\App.baml
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\UserList.g.cs
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\UserList.baml

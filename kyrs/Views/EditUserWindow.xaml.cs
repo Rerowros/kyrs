@@ -1,7 +1,12 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Navigation;
 using kyrs.Models;
-
+using Microsoft.EntityFrameworkCore;
+using kyrs.Views;
+using NLog;
 namespace kyrs.Views
 {
     public partial class EditUserWindow 
@@ -36,6 +41,11 @@ namespace kyrs.Views
             context.Users.Update(_user);
             await context.SaveChangesAsync();
             MessageBox.Show("Изменения сохранены");
+            Close();
+        }
+
+        private void back(object sender, RoutedEventArgs e)
+        {
             Close();
         }
     }

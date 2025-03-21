@@ -33,6 +33,7 @@
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
             <Button Content="Обновить" Width="100" Margin="5" Click="RefreshButton_Click"/>
             <Button Content="Назад" Width="100" Margin="5" Click="BackButton_Click"/>
+            
         </StackPanel>
     </Grid>
 </Page>

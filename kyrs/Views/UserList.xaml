@@ -23,5 +23,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Назад" Click="back " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,0,5,5"/>
     </Grid>
 </Page>

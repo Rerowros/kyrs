@@ -4,11 +4,17 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using kyrs.Models;
 using Microsoft.EntityFrameworkCore;
+using kyrs.Views;
+using NLog;
+
+
 
 namespace kyrs.Views;
 
 public partial class Admin : Page
 {
+    private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
     public Admin()
     {
         InitializeComponent();
@@ -95,6 +101,25 @@ public partial class Admin : Page
     {
         NavigationService.Navigate(new TransactionHistory());
     }
+    
+    
+    private void GoToPage1_Click(object sender, RoutedEventArgs e)
+    {
+        NavigationService.Navigate(new Authorization());
+        Logger.Info("Переход на страницу авторизации");
+    }
+
+    private void GoToPage2_Click(object sender, RoutedEventArgs e)
+    {
+        NavigationService.Navigate(new Cashier());
+    }
+    
+    private void GoToPage3_Click(object sender, RoutedEventArgs e)
+    {
+        NavigationService.Navigate(new Admin());
+    }
+
+
 }
 
 

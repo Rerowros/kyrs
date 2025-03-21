@@ -13,9 +13,9 @@
             <ComboBox x:Name="UserRole" Width="200" Margin="5">
                 <ComboBoxItem Content="Кассир" />
                 <ComboBoxItem Content="Администратор" />
-                <ComboBoxItem Content="Менеджер" />
             </ComboBox>
             <Button Content="Сохранить" Width="200" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Назад" Click="back" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,0,5,5"/>
         </StackPanel>
     </Grid>
 </Window>
