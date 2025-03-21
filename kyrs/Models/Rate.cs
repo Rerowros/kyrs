@@ -10,6 +10,7 @@ public class CurrencyRates
     private const string ApiKey = "7ef39e9324a52f7e14147605a0348852"; // Замените на ваш API ключ
     private const string BaseUrl = "http://data.fixer.io/api/latest";
     private Dictionary<string, decimal> rates;
+    public Dictionary<string, decimal> Rates => rates;
 
     public async Task<bool> GetRatesAsync()
     {

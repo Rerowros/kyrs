@@ -118,7 +118,11 @@ public partial class Admin : Page
     {
         NavigationService.Navigate(new Admin());
     }
-
+    private void EditRatesButton_Click(object sender, RoutedEventArgs e)
+    {
+        NavigationService.Navigate(new CurrencyRateEdit());
+        Logger.Info("Переход на страницу редактирования курсов валют");
+    }
 
 }
 

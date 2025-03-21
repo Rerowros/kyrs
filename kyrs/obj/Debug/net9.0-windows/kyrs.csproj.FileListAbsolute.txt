@@ -58,3 +58,5 @@ C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\NLog.dll
 C:\Users\yp328\RiderProjects\kyrs\kyrs\bin\Debug\net9.0-windows\RestSharp.dll
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\TransactionHistory.g.cs
 C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\TransactionHistory.baml
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\CurrencyRateEdit.baml
+C:\Users\yp328\RiderProjects\kyrs\kyrs\obj\Debug\net9.0-windows\Views\CurrencyRateEdit.g.cs

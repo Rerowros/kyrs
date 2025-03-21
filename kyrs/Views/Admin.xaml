@@ -29,7 +29,11 @@
                 </ComboBox>
                 <Button Content="Добавить" Width="200" Margin="5" Click="AddUserButton_Click" />
                 <Button Content="База пользователей" Width="200" Margin="5,40,5,5" Click="ToUserList" />
+                <Button x:Name="EditRatesButton" Content="Редактировать курсы валют" Width="250" Height="40" 
+                        Margin="5,25,5,5"
+                        Click="EditRatesButton_Click"/>
             </StackPanel>
+            
         </Border>
         <Border VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20" CornerRadius="6" Background="#4d3675" BorderThickness="1" Height="100" Width="375">
         <!--Логи системы: Просмотр журналов событий для мониторинга безопасности и исправления ошибок.-->
@@ -53,6 +57,7 @@
                 <Button Content="Админ" Click="GoToPage3_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,-79,5,5"/>
             </StackPanel>
         </Border>
+
         
         
 
