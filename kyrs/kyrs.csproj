@@ -2,33 +2,31 @@
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
+        <AssemblyTitle>Название вашего приложения</AssemblyTitle>
+        <Product>Название продукта</Product>
+        <Company>Ваша компания</Company>
+        <Description>Описание вашего приложения</Description>
+        <Copyright>Copyright © 2023</Copyright>
+
         <TargetFramework>net9.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UseWPF>true</UseWPF>
+        <Title>Обменник валют</Title>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
-      <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
-      <PackageReference Include="NLog" Version="5.3.4" />
+      <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
+      <PackageReference Include="NLog" Version="5.4.0" />
       <PackageReference Include="NLog.Config" Version="4.7.15" />
-      <PackageReference Include="NLog.Schema" Version="5.3.4" />
-      <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
+      <PackageReference Include="NLog.Schema" Version="5.4.0" />
+      <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.3" />
       <PackageReference Include="RestSharp" Version="112.1.0" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Content Include="obj\Debug\net9.0-windows\kyrs.csproj.Up2Date" />
-      <Content Include="obj\Debug\net9.0-windows\kyrs_1dy43vxi_wpftmp.assets.cache" />
-      <Content Include="obj\Debug\net9.0-windows\kyrs_3pq4zmaq_wpftmp.assets.cache" />
-      <Content Include="obj\Debug\net9.0-windows\kyrs_4j542b1c_wpftmp.assets.cache" />
-      <Content Include="obj\Debug\net9.0-windows\kyrs_ao10zzqu_wpftmp.assets.cache" />
-      <Content Include="obj\Debug\net9.0-windows\kyrs_aq1clris_wpftmp.assets.cache" />
-      <Content Include="obj\Debug\net9.0-windows\kyrs_bx1kggir_wpftmp.assets.cache" />
-      <Content Include="obj\Debug\net9.0-windows\kyrs_euoelb4e_wpftmp.assets.cache" />
-      <Content Include="obj\Debug\net9.0-windows\kyrs_hedqsjt2_wpftmp.assets.cache" />
-    </ItemGroup>
+   
 
     <ItemGroup>
       <Page Update="Views\Authorization.xaml">

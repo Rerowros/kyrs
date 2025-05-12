@@ -6,7 +6,7 @@ namespace kyrs.Models
     public class ApplicationContext : DbContext
     {
         public DbSet<User> Users { get; set; } = null!;
-        public DbSet<Currency> currency { get; set; } = null!; // Добавьте это свойство
+        public DbSet<Currency> currency { get; set; } = null!; 
         public DbSet<Transaction> Transactions { get; set; }
         
         public ApplicationContext()
@@ -24,19 +24,7 @@ namespace kyrs.Models
         }
 
         
-        
-        
-        /*Валидация с хешированием*/
-        
-        /*public async Task<User?> ValidateUserAsync(string login, string password)
-        {
-            var user = await Users.SingleOrDefaultAsync(u => u.Login == login);
-            if (user != null && user.ValidatePassword(password))
-            {
-                return user;
-            }
-            return null;
-        }*/
+
     }
     
 }

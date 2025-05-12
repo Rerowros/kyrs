@@ -5,35 +5,121 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:kyrs.Views"
       mc:Ignorable="d"
-      Title="TransactionHistory" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
-            <Label Content="История операций обмена валюты" FontSize="20" FontWeight="Bold"/>
-        </StackPanel>
-        
-        <DataGrid Grid.Row="1" x:Name="TransactionsGrid" AutoGenerateColumns="False" 
-                  Margin="10" IsReadOnly="True" AlternatingRowBackground="#FFE6E6E6">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="40"/>
-                <DataGridTextColumn Header="Дата и время" Binding="{Binding TransactionDate, StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}" Width="150"/>
-                <DataGridTextColumn Header="Оператор" Binding="{Binding OperatorName}" Width="120"/>
-                <DataGridTextColumn Header="Из валюты" Binding="{Binding FromCurrency}" Width="80"/>
-                <DataGridTextColumn Header="Сумма" Binding="{Binding AmountFrom, StringFormat=\{0:N2\}}" Width="100"/>
-                <DataGridTextColumn Header="В валюту" Binding="{Binding ToCurrency}" Width="80"/>
-                <DataGridTextColumn Header="Сумма после конвертации" Binding="{Binding AmountTo, StringFormat=\{0:N2\}}" Width="150"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
-            <Button Content="Обновить" Width="100" Margin="5" Click="RefreshButton_Click"/>
-            <Button Content="Назад" Width="100" Margin="5" Click="BackButton_Click"/>
-            
-        </StackPanel>
+      Title="TransactionHistory"
+      Style="{StaticResource FadeInTransition}">
+
+    <Grid Background="#323232">
+        <Viewbox Stretch="Uniform" StretchDirection="DownOnly"
+                 MaxHeight="900" MaxWidth="1400">
+            <Grid Width="1100" Height="700">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Content="История операций обмена валюты"
+                       FontSize="32" FontWeight="Bold" Foreground="#aed5fc"
+                       HorizontalAlignment="Center" Margin="20,20,20,10"/>
+
+                <Border Grid.Row="1" Background="#4d3675"
+                        CornerRadius="15" Margin="20"
+                        MinWidth="800" MinHeight="300">
+                    <DataGrid x:Name="TransactionsGrid" AutoGenerateColumns="False"
+                          Margin="15" IsReadOnly="True"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                          Background="Transparent" Foreground="White"
+                          BorderBrush="#8258FA" BorderThickness="1"
+                          RowBackground="#2E2C45" AlternatingRowBackground="#3E3C55"
+                          GridLinesVisibility="Horizontal"
+                          HorizontalGridLinesBrush="#5d466a"
+                          ScrollViewer.CanContentScroll="True"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                        <DataGrid.Resources>
+<Style TargetType="DataGridColumnHeader">
+    <Setter Property="Background" Value="#1F1D30"/>
+    <Setter Property="Foreground" Value="White"/>
+    <Setter Property="Padding" Value="10,5"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="Template">
+        <Setter.Value>
+            <ControlTemplate TargetType="DataGridColumnHeader">
+                <Grid>
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <ContentPresenter Grid.Column="0" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            <Path x:Name="SortArrow" Grid.Column="1" Width="8" Height="6" 
+                                  Margin="5,0,5,0" Stretch="Fill" Opacity="0.75" Fill="White"
+                                  RenderTransformOrigin="0.5,0.4"
+                                  Visibility="Collapsed"
+                                  Data="M 0 0 L 5 5 L 10 0 Z"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="SortDirection" Value="Ascending">
+                        <Setter TargetName="SortArrow" Property="Visibility" Value="Visible"/>
+                        <Setter TargetName="SortArrow" Property="RenderTransform">
+                            <Setter.Value>
+                                <RotateTransform Angle="180"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                    <Trigger Property="SortDirection" Value="Descending">
+                        <Setter TargetName="SortArrow" Property="Visibility" Value="Visible"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </Setter.Value>
+    </Setter>
+</Style>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Padding" Value="10,5"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="FontSize" Value="13"/>
+                            </Style>
+                            <Style TargetType="ScrollBar">
+                                <Setter Property="Background" Value="#323232"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="0.5*"/>
+                            <DataGridTextColumn Header="Дата и время" Binding="{Binding TransactionDate, StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}" Width="1.5*"/>
+                            <DataGridTextColumn Header="Оператор" Binding="{Binding OperatorName}" Width="1.2*"/>
+                            <DataGridTextColumn Header="Из валюты" Binding="{Binding FromCurrency}" Width="0.8*"/>
+                            <DataGridTextColumn Header="Сумма" Binding="{Binding AmountFrom, StringFormat=\{0:N2\}}" Width="1*"/>
+                            <DataGridTextColumn Header="В валюту" Binding="{Binding ToCurrency}" Width="0.8*"/>
+                            <DataGridTextColumn Header="Сумма после конвертации" Binding="{Binding AmountTo, StringFormat=\{0:N2\}}" Width="1.5*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal"
+                            HorizontalAlignment="Center" Margin="20,10,20,20">
+                    <Button Content="Обновить"
+                            Width="180" Height="45"
+                            FontSize="16" FontWeight="SemiBold"
+                            Background="#8258FA" Foreground="White"
+                            Margin="10" Click="RefreshButton_Click"/>
+                    <Button Content="Назад"
+                            Width="180" Height="45"
+                            FontSize="16" FontWeight="SemiBold"
+                            Background="#464568" Foreground="White"
+                            Margin="10" Click="BackButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Viewbox>
     </Grid>
 </Page>

@@ -10,12 +10,14 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("kyrs")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Ваша компания")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © 2023")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("Описание вашего приложения")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ecccd83ec37fcd1f13a114a48ef350c25b533999")]
-[assembly: System.Reflection.AssemblyProductAttribute("kyrs")]
-[assembly: System.Reflection.AssemblyTitleAttribute("kyrs")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+173268423014e6c4306c677acd4d2934b531020f")]
+[assembly: System.Reflection.AssemblyProductAttribute("Название продукта")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Название вашего приложения")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]

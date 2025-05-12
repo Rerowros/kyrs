@@ -5,62 +5,131 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:kyrs.Views"
       mc:Ignorable="d"
-      Title="Admin" Height="450" Width="800">
+      Title="Admin"
+      Style="{StaticResource FadeInTransition}">
     <Grid>
-        <Border VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20" CornerRadius="6" Background="#4d3675" BorderThickness="1" Height="355" Width="375">
-            <!--user editor-->
-            <StackPanel Orientation="Vertical" Margin="10">
-                <Label Content="Редактор пользователей" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Левая панель - Редактор пользователей -->
+        <Border Grid.Row="1" Grid.Column="0" Margin="20,10,10,20" 
+                CornerRadius="6" Background="#4d3675" BorderThickness="1">
+            <StackPanel Orientation="Vertical" Margin="15">
+                <Label Content="Редактор пользователей" HorizontalAlignment="Center" 
+                       FontSize="18" FontWeight="Bold" 
+                       Margin="0,0,0,15"/>
+                
                 <TextBox Foreground="White"
                          Text="Введите имя пользователя"
                          GotFocus="TextBox_GotFocus"
                          LostFocus="TextBox_LostFocus"
-                         x:Name="UserName" Width="200" Margin="5"/>
-                
+                         x:Name="UserName" 
+                         MaxWidth="300" MinWidth="200"
+                         HorizontalAlignment="Center"
+                         Height="40" Margin="5,10"/>
+
                 <TextBox Foreground="White"
                          Text="Введите пароль"
                          GotFocus="TextBox_GotFocus"
                          LostFocus="TextBox_LostFocus"
-                         x:Name="UserPassword" Width="200" Margin="5"/>
-                
-                <ComboBox Foreground="White" x:Name="UserRole" Width="200" Margin="5">
+                         x:Name="UserPassword" 
+                         MaxWidth="300" MinWidth="200"
+                         HorizontalAlignment="Center"
+                         Height="40" Margin="5,10"/>
+
+                <ComboBox Foreground="White" x:Name="UserRole" 
+                          MaxWidth="300" MinWidth="200"
+                          HorizontalAlignment="Center"
+                          Height="40" Margin="5,10">
                     <ComboBoxItem Content="Кассир" />
                     <ComboBoxItem Content="Администратор" />
                 </ComboBox>
-                <Button Content="Добавить" Width="200" Margin="5" Click="AddUserButton_Click" />
-                <Button Content="База пользователей" Width="200" Margin="5,40,5,5" Click="ToUserList" />
-                <Button x:Name="EditRatesButton" Content="Редактировать курсы валют" Width="250" Height="40" 
-                        Margin="5,25,5,5"
-                        Click="EditRatesButton_Click"/>
+                
+                <Button Content="Добавить" 
+                        MaxWidth="300" MinWidth="200"
+                        HorizontalAlignment="Center"
+                        Height="40" Margin="5,15" Click="AddUserButton_Click" />
+                
+                <Button Content="База пользователей" 
+                        MaxWidth="300" MinWidth="200"
+                        HorizontalAlignment="Center"
+                        Height="40" Margin="5,15" Click="ToUserList" />
+                
+                <Button x:Name="EditRatesButton" Content="Редактировать курсы валют" 
+                        MaxWidth="300" MinWidth="250"
+                        HorizontalAlignment="Center"
+                        Height="40" Margin="5,15" Click="EditRatesButton_Click"/>
             </StackPanel>
+        </Border>
+
+        <!-- Правая панель - группа блоков -->
+        <Grid Grid.Row="1" Grid.Column="1" Margin="10,10,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             
-        </Border>
-        <Border VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20" CornerRadius="6" Background="#4d3675" BorderThickness="1" Height="100" Width="375">
-        <!--Логи системы: Просмотр журналов событий для мониторинга безопасности и исправления ошибок.-->
-            <StackPanel Orientation="Vertical" Margin="10">
-                <Label Content="Логи системы" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" />
-                <Button Content="Просмотреть" Width="200" Margin="5" Click="ViewLogsButton_Click" />
-            </StackPanel>
-        </Border>
-        
-        <Border VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20,130,20,20" CornerRadius="6" Background="#4d3675" BorderThickness="1" Height="100" Width="375">
-            <StackPanel Orientation="Vertical" Margin="10">
-                <Label Content="История операций" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" />
-                <Button Content="Просмотреть" Width="200" Margin="5" Click="ViewTransactionsButton_Click" />
-            </StackPanel>
-        </Border>
-        
-        <Border VerticalAlignment="Top" HorizontalAlignment="Right" Margin="30,230,20,20" CornerRadius="6" Background="#4d3675" BorderThickness="1" Height="100" Width="375">
-            <StackPanel Orientation="Vertical" >
-                <Button Content="авторизация" Click="GoToPage1_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"/>
-                <Button Content="Кассир" Click="GoToPage2_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,5,5"/>
-                <Button Content="Админ" Click="GoToPage3_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,-79,5,5"/>
-            </StackPanel>
-        </Border>
+            <!-- Блок логов -->
+            <Border Grid.Row="0" Margin="0,0,0,10" 
+                    CornerRadius="6" Background="#4d3675" BorderThickness="1">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <Label Content="Логи системы" HorizontalAlignment="Center" 
+                           FontSize="18" FontWeight="Bold" 
+                           Margin="0,0,0,15"/>
+                    <Button Content="Просмотреть" 
+                            MaxWidth="300" MinWidth="200"
+                            HorizontalAlignment="Center"
+                            Height="40" Margin="5" Click="ViewLogsButton_Click" />
+                </StackPanel>
+            </Border>
 
-        
-        
+            <!-- Блок истории операций -->
+            <Border Grid.Row="1" Margin="0,10,0,10" 
+                    CornerRadius="6" Background="#4d3675" BorderThickness="1">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <Label Content="История операций" HorizontalAlignment="Center" 
+                           FontSize="18" FontWeight="Bold" 
+                           Margin="0,0,0,15"/>
+                    <Button Content="Просмотреть" 
+                            MaxWidth="300" MinWidth="200"
+                            HorizontalAlignment="Center"
+                            Height="40" Margin="5" Click="ViewTransactionsButton_Click" />
+                </StackPanel>
+            </Border>
 
+            <!-- Блок навигации -->
+            <Border Grid.Row="2" Margin="0,10,0,0" 
+                    CornerRadius="6" Background="#4d3675" BorderThickness="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                        <Label Content="Навигация" HorizontalAlignment="Center" 
+                               FontSize="18" FontWeight="Bold" 
+                               Margin="0,0,0,15"/>
+                        <Button Content="Авторизация" Click="GoToPage1_Click" 
+                                Width="150" Height="40" Margin="5,5,5,10"
+                                HorizontalAlignment="Center"/>
+                        <Button Content="Кассир" Click="GoToPage2_Click" 
+                                Width="150" Height="40" Margin="5,0,5,5"
+                                HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    
+                    <Button Grid.Column="1" Content="Админ" Click="GoToPage3_Click" 
+                            Width="150" Height="40" Margin="5,0,5,5"
+                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
-    
 </Page>

@@ -7,7 +7,7 @@ public class CurrencyRates
 {
 
     
-    private const string ApiKey = "7ef39e9324a52f7e14147605a0348852"; // Замените на ваш API ключ
+    private const string ApiKey = "7ef39e9324a52f7e14147605a0348852";
     private const string BaseUrl = "http://data.fixer.io/api/latest";
     private Dictionary<string, decimal> rates;
     public Dictionary<string, decimal> Rates => rates;
@@ -40,7 +40,8 @@ public class CurrencyRates
     {
         using (var context = new ApplicationContext())
         {
-            var currency = context.currency.SingleOrDefault(c => c.Code == currencyCode);            if (currency == null)
+            var currency = context.currency.SingleOrDefault(c => c.Code == currencyCode);            
+            if (currency == null)
             {
                 throw new InvalidOperationException($"Валюта с кодом {currencyCode} не найдена.");
             }

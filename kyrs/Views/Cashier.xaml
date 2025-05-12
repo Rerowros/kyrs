@@ -5,56 +5,138 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:kyrs"
       mc:Ignorable="d"
-      Title="Cashier" Height="750" Width="800">
-    <Grid>
-        
-        <Label Foreground="#aed5fc" Content="Кассир" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" />
-        
-        <StackPanel Margin="50,150,50,50">
-            <!--форма обмена валюты-->
-            <StackPanel Orientation="Vertical" Margin="10">
-                <Label Content="Обмен валюты" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" />
-                <TextBox Foreground="White"
-                         Text="Введите сумму"
-                         GotFocus="TextBox_GotFocus"
-                         LostFocus="TextBox_LostFocus"
-                         x:Name="ExchangeAmount" Width="200" Margin="5"/>
+      Title="Cashier"
+      Style="{StaticResource FadeInTransition}">
+      
+    <Grid Background="#323232">
+        <Viewbox Stretch="Uniform" StretchDirection="DownOnly" 
+                 MaxHeight="900" MaxWidth="1200">
+            <Grid Width="900" Height="700">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
                 
-                <ComboBox Foreground="White" x:Name="ExchangeCurrencyFrom" Width="200" Margin="5">
-                    <ComboBoxItem Content="USD" />
-                    <ComboBoxItem Content="EUR" />
-                    <ComboBoxItem Content="RUB" />
-                </ComboBox>
-                
-                <ComboBox Foreground="White" x:Name="ExchangeCurrencyTo" Width="200" Margin="5">
-                    <ComboBoxItem Content="USD" />
-                    <ComboBoxItem Content="EUR" />
-                    <ComboBoxItem Content="RUB" />
-                </ComboBox>
-                <Button Content="Обновить курсы" Width="200" Margin="5" Click="UpdateRatesButton_Click" />
-                <Button Content="Обменять" Width="200" Margin="5" Click="ExchangeButton_Click" />
-            </StackPanel>
+                <Label Grid.Row="0" Foreground="#aed5fc" Content="Кассир" 
+                       HorizontalAlignment="Center" FontSize="32" FontWeight="Bold"
+                       Margin="0,20,0,20" />
 
-            <!--Текущие курсы валют-->
-            <Border CornerRadius="6" Background="#4d3675" BorderThickness="1" Height="130" Width="150">
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
-                <Label HorizontalAlignment="Center" Content="Курсы валют" FontSize="16" FontWeight="Bold" />
-                <Label HorizontalAlignment="Left" x:Name="Usd" Content="USD: 1" />
-                <Label HorizontalAlignment="Left" x:Name="Eur" Content="EUR: 0,92305" />
-                <Label HorizontalAlignment="Left" x:Name="Rub" Content="RUB: 97,55" />
-            </StackPanel>
-            </Border>
-            <!--Остатки валюты-->
-            <Border CornerRadius="6" Background="#4d3675" BorderThickness="1" Height="130" Width="150">
-                <StackPanel  Orientation="Vertical" HorizontalAlignment="Center" Margin="0, 5, 0, 0">
-                    <Label HorizontalAlignment="Center" Content="Остатки валюты" FontSize="16" FontWeight="Bold" />
-                    <Label HorizontalAlignment="Center" x:Name="UsdCap" Content="USD: 5,200.00" />
-                    <Label HorizontalAlignment="Center" x:Name="EurCap" Content="EUR: 542,512.00" />
-                    <Label HorizontalAlignment="Center" x:Name="RubCap" Content="RUB: 52.00" />
-                </StackPanel>
+                <Grid Grid.Row="1" Margin="40,0,40,40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
 
-            </Border>
+                    <!-- Форма обмена валюты -->
+                    <Border Grid.Column="0" Background="#4d3675" 
+                            CornerRadius="15" Margin="0,0,20,0"
+                            MinWidth="400" MinHeight="300">
+                        <StackPanel Orientation="Vertical" Margin="30,40"
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center">
+                            <Label Content="Обмен валюты" HorizontalAlignment="Center" 
+                                   FontSize="24" FontWeight="Bold" Margin="0,0,0,30" />
+                                   
+                            <TextBox Foreground="White"
+                                     Text="Введите сумму"
+                                     GotFocus="TextBox_GotFocus"
+                                     LostFocus="TextBox_LostFocus"
+                                     x:Name="ExchangeAmount" 
+                                     Width="300" Height="40"
+                                     FontSize="16"
+                                     Margin="0,0,0,15"/>
 
-        </StackPanel>
+                            <ComboBox Foreground="White" 
+                                      x:Name="ExchangeCurrencyFrom" 
+                                      Width="300" Height="40"
+                                      FontSize="16"
+                                      Margin="0,0,0,15">
+                                <ComboBoxItem Content="USD" />
+                                <ComboBoxItem Content="EUR" />
+                                <ComboBoxItem Content="RUB" />
+                            </ComboBox>
+
+                            <ComboBox Foreground="White" 
+                                      x:Name="ExchangeCurrencyTo" 
+                                      Width="300" Height="40"
+                                      FontSize="16"
+                                      Margin="0,0,0,20">
+                                <ComboBoxItem Content="USD" />
+                                <ComboBoxItem Content="EUR" />
+                                <ComboBoxItem Content="RUB" />
+                            </ComboBox>
+                            
+                            <Button Content="Обновить курсы" 
+                                    Width="250" Height="45"
+                                    FontSize="16"
+                                    FontWeight="SemiBold"
+                                    Margin="0,0,0,15" 
+                                    Click="UpdateRatesButton_Click" />
+                                    
+                            <Button Content="Обменять" 
+                                    Width="250" Height="45"
+                                    FontSize="16"
+                                    FontWeight="SemiBold"
+                                    Margin="0,0,0,10" 
+                                    Click="ExchangeButton_Click" />
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Информационная панель (курсы и остатки) -->
+                    <Grid Grid.Column="1" Width="300">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Текущие курсы валют -->
+                        <Border Grid.Row="0" 
+                                CornerRadius="15" Background="#4d3675" 
+                                BorderThickness="1" Margin="0,0,0,10">
+                            <StackPanel Orientation="Vertical" 
+                                        VerticalAlignment="Center"
+                                        Margin="20,30">
+                                <Label HorizontalAlignment="Center" 
+                                       Content="Курсы валют" 
+                                       FontSize="22" FontWeight="Bold"
+                                       Margin="0,0,0,15" />
+                                <Label HorizontalAlignment="Center" 
+                                       x:Name="Usd" Content="USD: 1"
+                                       FontSize="16" Margin="0,5"/>
+                                <Label HorizontalAlignment="Center" 
+                                       x:Name="Eur" Content="EUR: 0,92305"
+                                       FontSize="16" Margin="0,5"/>
+                                <Label HorizontalAlignment="Center" 
+                                       x:Name="Rub" Content="RUB: 97,55"
+                                       FontSize="16" Margin="0,5"/>
+                            </StackPanel>
+                        </Border>
+                        
+                        <!-- Остатки валюты -->
+                        <Border Grid.Row="1" 
+                                CornerRadius="15" Background="#4d3675" 
+                                BorderThickness="1" Margin="0,10,0,0">
+                            <StackPanel Orientation="Vertical" 
+                                        VerticalAlignment="Center"
+                                        Margin="20,30">
+                                <Label HorizontalAlignment="Center" 
+                                       Content="Остатки валюты" 
+                                       FontSize="22" FontWeight="Bold"
+                                       Margin="0,0,0,15" />
+                                <Label HorizontalAlignment="Center" 
+                                       x:Name="UsdCap" Content="USD: 5,200.00"
+                                       FontSize="16" Margin="0,5"/>
+                                <Label HorizontalAlignment="Center" 
+                                       x:Name="EurCap" Content="EUR: 542,512.00"
+                                       FontSize="16" Margin="0,5"/>
+                                <Label HorizontalAlignment="Center" 
+                                       x:Name="RubCap" Content="RUB: 52.00"
+                                       FontSize="16" Margin="0,5"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Viewbox>
     </Grid>
 </Page>

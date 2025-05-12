@@ -5,24 +5,122 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:kyrs.Views"
       mc:Ignorable="d"
-      Title="UserList" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="UserDataGrid" AutoGenerateColumns="False" IsReadOnly="True" Margin="10">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="*"/>
-                <DataGridTextColumn Header="Роль" Binding="{Binding Role}" Width="*"/>
-                <DataGridTemplateColumn Header="Действия" Width="*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Button Content="Редактировать" Click="EditUserButton_Click" Margin="5"/>
-                                <Button Content="Удалить" Click="DeleteUserButton_Click" Margin="5"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button Content="Назад" Click="back " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,0,5,5"/>
+      Title="UserList"
+      Style="{StaticResource FadeInTransition}">
+      
+    <Grid Background="#323232">
+        <Viewbox Stretch="Uniform" StretchDirection="DownOnly"
+                 MaxHeight="900" MaxWidth="1400">
+            <Grid Width="1100" Height="700">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Content="Список пользователей"
+                       FontSize="32" FontWeight="Bold" Foreground="#aed5fc"
+                       HorizontalAlignment="Center" Margin="20,20,20,10"/>
+
+                <Border Grid.Row="1" Background="#4d3675"
+                        CornerRadius="15" Margin="20"
+                        MinWidth="800" MinHeight="300">
+                    <DataGrid x:Name="UserDataGrid" AutoGenerateColumns="False"
+                          IsReadOnly="True" Margin="15"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                          Background="Transparent" Foreground="White"
+                          BorderBrush="#8258FA" BorderThickness="1"
+                          RowBackground="#2E2C45" AlternatingRowBackground="#3E3C55"
+                          GridLinesVisibility="Horizontal"
+                          HorizontalGridLinesBrush="#5d466a">
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="#1F1D30"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Padding" Value="10,5"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="DataGridColumnHeader">
+                                            <Grid>
+                                                <Border Background="{TemplateBinding Background}"
+                                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                                        Padding="{TemplateBinding Padding}">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="Auto" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <ContentPresenter Grid.Column="0"
+                                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                                        <Path x:Name="SortArrow" Grid.Column="1" Width="8" Height="6"
+                                                          Margin="5,0,5,0" Stretch="Fill" Opacity="0.75" Fill="White"
+                                                          RenderTransformOrigin="0.5,0.4"
+                                                          Visibility="Collapsed"
+                                                          Data="M 0 0 L 5 5 L 10 0 Z"/>
+                                                    </Grid>
+                                                </Border>
+                                            </Grid>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="SortDirection" Value="Ascending">
+                                                    <Setter TargetName="SortArrow" Property="Visibility" Value="Visible"/>
+                                                    <Setter TargetName="SortArrow" Property="RenderTransform">
+                                                        <Setter.Value>
+                                                            <RotateTransform Angle="180"/>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Trigger>
+                                                <Trigger Property="SortDirection" Value="Descending">
+                                                    <Setter TargetName="SortArrow" Property="Visibility" Value="Visible"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Padding" Value="10,5"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="FontSize" Value="13"/>
+                            </Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#8258FA"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="FontSize" Value="13"/>
+                                <Setter Property="Padding" Value="8,5"/>
+                                <Setter Property="MinWidth" Value="100"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="1*"/>
+                            <DataGridTextColumn Header="Роль" Binding="{Binding Role}" Width="1*"/>
+                            <DataGridTemplateColumn Header="Действия" Width="1.2*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Button Content="Редактировать" Click="EditUserButton_Click" Margin="5"/>
+                                            <Button Content="Удалить" Click="DeleteUserButton_Click" Margin="5"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal"
+                            HorizontalAlignment="Center" Margin="20,10,20,20">
+                    <Button Content="Назад"
+                            Width="180" Height="45"
+                            FontSize="16" FontWeight="SemiBold"
+                            Background="#464568" Foreground="White"
+                            Margin="10" Click="back"/>
+                </StackPanel>
+            </Grid>
+        </Viewbox>
     </Grid>
 </Page>

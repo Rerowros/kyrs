@@ -4,18 +4,60 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        Title="Редактирование пользователя" Height="300" Width="400">
-    <Grid>
-        <StackPanel Orientation="Vertical" Margin="10">
-            <Label Content="Редактирование пользователя" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" />
-            <TextBox x:Name="UserName" Width="200" Margin="5" />
-            <PasswordBox x:Name="UserPassword" Width="200" Margin="5" />
-            <ComboBox x:Name="UserRole" Width="200" Margin="5">
-                <ComboBoxItem Content="Кассир" />
-                <ComboBoxItem Content="Администратор" />
-            </ComboBox>
-            <Button Content="Сохранить" Width="200" Margin="5" Click="SaveButton_Click"/>
-            <Button Content="Назад" Click="back" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,0,5,5"/>
-        </StackPanel>
-    </Grid>
+        Background="#323232"
+        Title="Редактирование пользователя"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen">
+    <Border Background="#4d3675" CornerRadius="15" Margin="15">
+        <Viewbox Stretch="Uniform" StretchDirection="DownOnly"
+                 MaxHeight="400" MaxWidth="500">
+            <Grid Width="400" Height="300">
+                <StackPanel Orientation="Vertical"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="20">
+                    <Label Content="Редактирование пользователя"
+                           HorizontalAlignment="Center"
+                           FontSize="22" FontWeight="Bold"
+                           Foreground="#aed5fc"
+                           Margin="0,0,0,20" />
+                    
+                    <TextBox x:Name="UserName"
+                             Width="250" Height="40"
+                             FontSize="16"
+                             Foreground="White"
+                             Margin="0,5,0,10" />
+                    
+                    <PasswordBox x:Name="UserPassword"
+                                 Width="250" Height="40"
+                                 FontSize="16"
+                                 Foreground="White"
+                                 Margin="0,5,0,10" />
+                    
+                    <ComboBox x:Name="UserRole"
+                              Width="250" Height="40"
+                              FontSize="16"
+                              Foreground="White"
+                              Margin="0,5,0,20">
+                        <ComboBoxItem Content="Кассир" />
+                        <ComboBoxItem Content="Администратор" />
+                    </ComboBox>
+                    
+                    <Button Content="Сохранить"
+                            Width="250" Height="45"
+                            FontSize="16" FontWeight="SemiBold"
+                            Background="#8258FA" Foreground="White"
+                            Margin="0,0,0,15"
+                            Click="SaveButton_Click"/>
+                    
+                    <Button Content="Назад"
+                            Width="250" Height="35"
+                            FontSize="14" FontWeight="SemiBold"
+                            Background="#464568" Foreground="White"
+                            Margin="0,0,0,5"
+                            Click="back"/>
+                </StackPanel>
+            </Grid>
+        </Viewbox>
+    </Border>
 </Window>
